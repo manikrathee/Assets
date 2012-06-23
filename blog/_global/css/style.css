@@ -78,4 +78,4 @@ p{font-family:"museo",serif;font-size:16px;font-weight:300;}p.intro{font-family:
 .oldie #post-title-container{position:relative;z-index:50;height:95px;margin:-308px auto 140px auto;color:#fff;line-height:1;}
 .oldie #post-title{font-weight:900;font-size:36px;}
 .oldie #body{max-width:92%;padding:10px 50px;}
-@media (min-width:768px){header#page-header{position:fixed;} #feature{min-height:400px;} #post-title-container{position:relative;z-index:50;height:95px;margin:-308px auto 140px auto;color:#fff;line-height:1;} #post-title{font-weight:900;font-size:36px;} #body{max-width:92%;padding:10px 50px;}}@media (min-width:1000px){margin-top:-320px;height:200px;}
+@media (min-width:768px){header#page-header{position:fixed;} #feature{min-height:400px;} #post-title-container{position:relative;z-index:50;height:95px;margin:-308px auto 140px auto;color:#fff;line-height:1;} #post-title{font-weight:900;font-size:36px;} #body{max-width:92%;padding:10px 50px;}}@media (min-width:1330px){blockquote{position:absolute;left:-280px;width:250px;background:#fff;padding:10px;border-radius:6px;margin:0;font-size:14px;font-style:italic;line-height:1.4;font-family:"museo",serif;}}
