@@ -36,7 +36,8 @@ header#page-header{
 	z-index: 50;
 	width: 100%;
 	padding: 4px 0;
-	background: transparent url('http://assets.manikrathee.com/blog/_global/images/header-bg-dark.png') repeat 0 0;
+	background: #333;
+	border-bottom: 1px solid #fff;
 }
 h1#logo{
 	.ir;
@@ -75,6 +76,7 @@ article{
 #feature{
 	width: 100%;
 	max-width:100%;
+	margin-top: 68px;
 	img{
 		width: 100%;
 		max-width:100%;
@@ -92,12 +94,12 @@ article{
 	margin:0 20px;
 }
 #post-title{
-	/*font-family: "chunk",serif;*/
 	 font-family: "museo-slab",serif;
 	font-weight: 700;
 	letter-spacing: 2px;
-	color: #fff;
+	color: #333;
 	font-size: 24px;
+	text-align: center;
 }
 
 #body{
@@ -153,21 +155,17 @@ footer{
 	}
 }
 
-@media only screen and (-webkit-min-device-pixel-ratio:2){
-	h1#logo{
-		background:transparent url('http://assets.manikrathee.com/blog/_global/images/logo@2x.png') no-repeat 50% 50%;
-		-webkit-background-size:52px 52px;
-	}
-}
-
 
 
 .oldie{
 	header#page-header{
 		position: fixed;
+		background: transparent url('http://assets.manikrathee.com/blog/_global/images/header-bg-dark.png') repeat 0 0;
+		border: none;
 	}
 	#feature{
 		min-height: 400px;
+		margin-top: 0;
 	}
 	#post-title-container{
 		position: relative;
@@ -178,8 +176,11 @@ footer{
 		line-height: 1;
 	}
 	#post-title{
+		color:#fff;
 		font-weight: 900;
 		font-size: 36px;
+		text-align:left;
+		margin: 0;
 	}
 	#body{
 		max-width:92%;
@@ -209,5 +210,22 @@ footer{
 		font-style: italic;
 		line-height: 1.4;
 		font-family: "museo", serif;
+	}
+}
+
+
+@media only screen and (-webkit-min-device-pixel-ratio:2){
+	h1#logo{
+		background:transparent url('http://assets.manikrathee.com/blog/_global/images/logo@2x.png') no-repeat 50% 50%;
+		-webkit-background-size:52px 52px;
+	}
+}
+
+.ie7{
+	.container{
+		width:960px;
+		padding:0 2%;
+		margin-left: auto;
+		margin-right: auto;
 	}
 }
