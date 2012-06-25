@@ -84,9 +84,16 @@ article{
 }
 
 #post-title-container{
+	position: relative;
+	z-index: 50;
 	width:96%;
 	max-width: 740px;
-	margin: 30px auto;
+	margin: -205px auto 50px auto;
+	color: #fff;
+	line-height: 1;
+	background: transparent url('http://assets.manikrathee.com/blog/_global/images/header-bg-dark.png') repeat 0 0;
+	padding: 4px;
+
 }
 #post-title-logo{
 	float:left;
@@ -94,9 +101,10 @@ article{
 }
 #post-title{
 	 font-family: "museo-slab",serif;
-	font-weight: 700;
+	font-weight: 900;
 	letter-spacing: 2px;
-	color: #333;
+	color: #fff;
+	margin:0;
 	font-size: 24px;
 	text-align: center;
 }
@@ -167,6 +175,14 @@ footer{
 	}
 }
 
+@media screen and (min-width: 600px){
+	#post-title-container{
+		padding:0;
+		background: none;
+	}
+}
+
+
 
 
 .oldie{
@@ -180,18 +196,12 @@ footer{
 		margin-top: 0;
 	}
 	#post-title-container{
-		position: relative;
-		z-index: 50;
-		height: 95px;
+		padding:0;
+		background: none;
 		margin: -308px auto 140px auto;
-		color: #fff;
-		line-height: 1;
 	}
 	#post-title{
-		color:#fff;
-		font-weight: 900;
 		font-size: 36px;
-		margin: 0;
 	}
 	#body{
 		max-width:92%;
