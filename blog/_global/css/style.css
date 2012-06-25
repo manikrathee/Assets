@@ -60,6 +60,7 @@ table{border-collapse:collapse;border-spacing:0;}
 a:link{-webkit-tap-highlight-color:#333;}
 body{background:#e0e0e0;color:#333;text-rendering:optimizelegibility;}
 a{color:#333;text-decoration:none;font-family:"museo",serif;font-weight:500;-webkit-transition:color 0.2s ease-in-out;-moz-transition:color 0.2s ease-in-out;transition:color 0.2s ease-in-out;}
+img{max-width:100%;}
 .container{width:96%;padding:0 2%;margin-left:auto;margin-right:auto;max-width:1000px;}
 header#page-header{position:absolute;top:0;z-index:50;width:100%;padding:4px 0;background:#333;border-bottom:1px solid #fff;}
 h1#logo{display:block;text-indent:-999em;overflow:hidden;background-repeat:no-repeat;text-align:left;direction:ltr;background:transparent url('http://assets.manikrathee.com/blog/_global/images/logo.png') no-repeat 50% 50%;height:53px;width:52px;margin:0 20px 0 0;padding:0;float:left;}
@@ -73,14 +74,19 @@ article{width:100%;}
 #subtitle,#date{font-family:"proxima-nova",serif;font-size:26px;font-weight:300;display:block;text-align:center;margin:-5px 0 0 0;}
 #date{font-style:italic;font-size:18px;margin-top:6px;}
 #body{position:relative;z-index:20;background:#f5f5f5;width:650px;max-width:92%;margin-left:auto;margin-right:auto;padding:10px 4%;line-height:1.6;border-radius:3px;-webkit-transition:color 0.2s ease-in-out;-moz-transition:color 0.2s ease-in-out;transition:color 0.2s ease-in-out;}#body:hover a{color:#000;}#body:hover a:hover{color:#999;}
-#body ul#loader{padding:0;margin:0;}#body ul#loader li{list-style-type:none;}
+#body ul#loader{padding:0;margin:0;}#body ul#loader li{width:100%;list-style-type:none;}#body ul#loader li img{width:100%;}
 h4{font-family:"proxima-nova",sans-serif;font-size:24px;margin:0 0 10px 0;font-weight:300;}
 p{font-family:"museo",serif;font-size:16px;font-weight:300;}p.intro{font-family:"proxima-nova",sans-serif;font-size:20px;margin:30px 0 40px 0;line-height:1.3;}
+ul#social{display:none;}
 footer{background:#fff;border-top:1px solid #e0e0e0;padding:10px 0;text-align:center;font-family:"proxima-nova",sans-serif;font-weight:300;}footer p{font-size:13px;}
 @media screen and (min-width:600px){#post-title-container{padding:0;background:none;}}.oldie header#page-header{position:fixed;background:transparent url('http://assets.manikrathee.com/blog/_global/images/header-bg-dark.png') repeat 0 0;border:none;}
 .oldie #feature{min-height:400px;margin-top:0;}
 .oldie #post-title-container{padding:0;background:none;margin:-308px auto 140px auto;}
 .oldie #post-title{font-size:36px;}
 .oldie #body{max-width:92%;padding:10px 50px;}
+.oldie ul#social{display:block;width:380px;margin:30px auto 15px;padding:0;overflow:auto;zoom:1;opacity:0.2;-webkit-transition:opacity 0.25s ease-in-out;-moz-transition:opacity 0.25s ease-in-out;transition:opacity 0.25s ease-in-out;}.oldie ul#social:hover{opacity:1;}
+.oldie ul#social li{list-style-type:none;float:left;display:block;}
+.oldie ul#social #tweet{margin:4px 0 0 25px;}
+.oldie ul#social #follow{margin:5px 0 0 0;}
 .oldie footer{border:none;}
-@media (min-width:768px){header#page-header{position:fixed;background:transparent url('http://assets.manikrathee.com/blog/_global/images/header-bg-dark.png') repeat 0 0;border:none;} #feature{min-height:400px;margin-top:0;} #post-title-container{padding:0;background:none;margin:-308px auto 140px auto;} #post-title{font-size:36px;} #body{max-width:92%;padding:10px 50px;} footer{border:none;}}@media (min-width:1330px){blockquote{position:absolute;left:-280px;width:250px;background:#fff;padding:10px;border-radius:6px;margin:0;font-size:14px;font-style:italic;line-height:1.4;font-family:"museo",serif;}}@media only screen and (-webkit-min-device-pixel-ratio:2){h1#logo{background:transparent url('http://assets.manikrathee.com/blog/_global/images/logo@2x.png') no-repeat 50% 50%;-webkit-background-size:52px 52px;}}.ie7 .container{width:960px;padding:0 2%;margin-left:auto;margin-right:auto;}
+@media (min-width:768px){header#page-header{position:fixed;background:transparent url('http://assets.manikrathee.com/blog/_global/images/header-bg-dark.png') repeat 0 0;border:none;} #feature{min-height:400px;margin-top:0;} #post-title-container{padding:0;background:none;margin:-308px auto 140px auto;} #post-title{font-size:36px;} #body{max-width:92%;padding:10px 50px;} ul#social{display:block;width:380px;margin:30px auto 15px;padding:0;overflow:auto;zoom:1;opacity:0.2;-webkit-transition:opacity 0.25s ease-in-out;-moz-transition:opacity 0.25s ease-in-out;transition:opacity 0.25s ease-in-out;}ul#social:hover{opacity:1;} ul#social li{list-style-type:none;float:left;display:block;} ul#social #tweet{margin:4px 0 0 25px;} ul#social #follow{margin:5px 0 0 0;} footer{border:none;}}@media (min-width:1330px){blockquote{position:absolute;left:-280px;width:250px;background:#fff;padding:10px;border-radius:6px;margin:0;font-size:14px;font-style:italic;line-height:1.4;font-family:"museo",serif;}}@media only screen and (-webkit-min-device-pixel-ratio:2){h1#logo{background:transparent url('http://assets.manikrathee.com/blog/_global/images/logo@2x.png') no-repeat 50% 50%;-webkit-background-size:52px 52px;}}.ie7 .container{width:960px;padding:0 2%;margin-left:auto;margin-right:auto;}
