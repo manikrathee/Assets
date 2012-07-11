@@ -7,6 +7,120 @@
 ::selection { background:#333; color:#fff; text-shadow: none; }
 a:link { -webkit-tap-highlight-color: #333; }
 
+/* Keyframes */
+
+@-webkit-keyframes fadeOut {
+	0% {opacity: 1;}
+	100% {opacity: 0;}
+}
+
+@-moz-keyframes fadeOut {
+	0% {opacity: 1;}
+	100% {opacity: 0;}
+}
+
+@-ms-keyframes fadeOut {
+	0% {opacity: 1;}
+	100% {opacity: 0;}
+}
+
+@-o-keyframes fadeOut {
+	0% {opacity: 1;}
+	100% {opacity: 0;}
+}
+
+@keyframes fadeOut {
+	0% {opacity: 1;}
+	100% {opacity: 0;}
+}
+@-webkit-keyframes fadeInUp {
+	0% {
+		opacity: 0;
+		-webkit-transform: translateY(20px);
+	}
+
+	100% {
+		opacity: 1;
+		-webkit-transform: translateY(0);
+	}
+}
+
+@-moz-keyframes fadeInUp {
+	0% {
+		opacity: 0;
+		-moz-transform: translateY(20px);
+	}
+
+	100% {
+		opacity: 1;
+		-moz-transform: translateY(0);
+	}
+}
+
+@-ms-keyframes fadeInUp {
+	0% {
+		opacity: 0;
+		-ms-transform: translateY(20px);
+	}
+
+	100% {
+		opacity: 1;
+		-ms-transform: translateY(0);
+	}
+}
+
+@-o-keyframes fadeInUp {
+	0% {
+		opacity: 0;
+		-o-transform: translateY(20px);
+	}
+
+	100% {
+		opacity: 1;
+		-o-transform: translateY(0);
+	}
+}
+
+@keyframes fadeInUp {
+	0% {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+.animate {
+	-webkit-animation: 0.6s ease;
+	   -moz-animation: 0.6s ease;
+	    -ms-animation: 0.6s ease;
+	     -o-animation: 0.6s ease;
+	        animation: 0.6s ease;
+	-webkit-animation-fill-mode: both;
+	   -moz-animation-fill-mode: both;
+	    -ms-animation-fill-mode: both;
+	     -o-animation-fill-mode: both;
+	        animation-fill-mode: both;
+}
+
+.fadeInUp {
+	-webkit-animation-name: fadeInUp;
+	-moz-animation-name: fadeInUp;
+	-ms-animation-name: fadeInUp;
+	-o-animation-name: fadeInUp;
+	animation-name: fadeInUp;
+}
+.fadeOut {
+	-webkit-animation-name: fadeOut;
+	-moz-animation-name: fadeOut;
+	-ms-animation-name: fadeOut;
+	-o-animation-name: fadeOut;
+	animation-name: fadeOut;
+}
+/* /Keyframes */
+
 body{
 	background: #e0e0e0;
 	color: #333;
@@ -23,6 +137,55 @@ a{
 img{
 	max-width:100%;
 }
+
+body.blog-root{
+	#page-header{
+		position: relative;
+		background: #333;
+		border-bottom: 1px solid #999;
+	}
+	#logo{
+		width: 100%;
+		margin: 10px auto;
+		float: none;
+	}
+	a.post{
+		display: block;
+		width:100%;
+		background: #f9f9f9;
+		color: #999;
+		text-shadow: 0 0 2px #fff;
+		padding: 100px 0 40px 0;
+		text-align: center;
+		border-top: 1px solid #999;
+		font-family: "museo-slab",serif;
+		font-weight: 900;
+		letter-spacing: 2px;
+		font-size: 55px;
+		text-align: center;
+		text-transform: uppercase;
+		text-rendering: optimizelegibility;
+		-webkit-transition:color 0.3s ease-in-out;
+		-moz-transition:color 0.3s ease-in-out;
+		transition:color 0.3s ease-in-out;
+		&:last-child{
+			border-bottom: 1px solid #999;
+		}
+		&:hover{
+			color: red;
+		}
+		.info{
+			width: 100%;
+			text-align:center;
+			font-weight: normal;
+			text-transform: none;
+			font-size:18px;
+			font-family: "proxima-nova", sans-serif;
+		}
+	}
+}
+
+
 
 .container{
 	width:96%;
@@ -102,7 +265,7 @@ article{
 	margin:0 20px;
 }
 #post-title{
-	 font-family: "museo-slab",serif;
+	font-family: "museo-slab",serif;
 	font-weight: 900;
 	letter-spacing: 2px;
 	color: #fff;
@@ -203,6 +366,28 @@ footer{
 
 
 .oldie{
+
+	body.blog-root{
+		#logo{
+			margin: 10px auto;
+		}
+		.post{
+			-webkit-transition:color 0.3s ease-in-out;
+			-moz-transition:color 0.3s ease-in-out;
+			transition:color 0.3s ease-in-out;
+			&:hover{
+				.info{
+					.animate;
+					.fadeInUp;
+				}
+			}
+			.info{
+				.animate;
+				.fadeOut;
+			}
+		}
+	}
+
 	header#page-header{
 		position: fixed;
 		background: transparent url('http://assets.manikrathee.com/blog/_global/images/header-bg-dark.png') repeat 0 0;
