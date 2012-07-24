@@ -92,82 +92,6 @@ a:link { -webkit-tap-highlight-color: #333; }
 		transform: translateY(0);
 	}
 }
-@-webkit-keyframes flipInX {
-    0% {
-        -webkit-transform: perspective(400px) rotateX(90deg);
-        opacity: 0;
-    }
-    
-    40% {
-        -webkit-transform: perspective(400px) rotateX(-10deg);
-    }
-    
-    70% {
-        -webkit-transform: perspective(400px) rotateX(10deg);
-    }
-    
-    100% {
-        -webkit-transform: perspective(400px) rotateX(0deg);
-        opacity: 1;
-    }
-}
-@-moz-keyframes flipInX {
-    0% {
-        -moz-transform: perspective(400px) rotateX(90deg);
-        opacity: 0;
-    }
-    
-    40% {
-        -moz-transform: perspective(400px) rotateX(-10deg);
-    }
-    
-    70% {
-        -moz-transform: perspective(400px) rotateX(10deg);
-    }
-    
-    100% {
-        -moz-transform: perspective(400px) rotateX(0deg);
-        opacity: 1;
-    }
-}
-@-o-keyframes flipInX {
-    0% {
-        -o-transform: perspective(400px) rotateX(90deg);
-        opacity: 0;
-    }
-    
-    40% {
-        -o-transform: perspective(400px) rotateX(-10deg);
-    }
-    
-    70% {
-        -o-transform: perspective(400px) rotateX(10deg);
-    }
-    
-    100% {
-        -o-transform: perspective(400px) rotateX(0deg);
-        opacity: 1;
-    }
-}
-@keyframes flipInX {
-    0% {
-        transform: perspective(400px) rotateX(90deg);
-        opacity: 0;
-    }
-    
-    40% {
-        transform: perspective(400px) rotateX(-10deg);
-    }
-    
-    70% {
-        transform: perspective(400px) rotateX(10deg);
-    }
-    
-    100% {
-        transform: perspective(400px) rotateX(0deg);
-        opacity: 1;
-    }
-}
 .animate {
 	-webkit-animation: 0.6s ease;
 	   -moz-animation: 0.6s ease;
@@ -180,7 +104,73 @@ a:link { -webkit-tap-highlight-color: #333; }
 	     -o-animation-fill-mode: both;
 	        animation-fill-mode: both;
 }
+@-webkit-keyframes fadeInDown {
+	0% {
+		opacity: 0;
+		-webkit-transform: translateY(-20px);
+	}
 
+	100% {
+		opacity: 1;
+		-webkit-transform: translateY(0);
+	}
+}
+
+@-moz-keyframes fadeInDown {
+	0% {
+		opacity: 0;
+		-moz-transform: translateY(-20px);
+	}
+
+	100% {
+		opacity: 1;
+		-moz-transform: translateY(0);
+	}
+}
+
+@-ms-keyframes fadeInDown {
+	0% {
+		opacity: 0;
+		-ms-transform: translateY(-20px);
+	}
+
+	100% {
+		opacity: 1;
+		-ms-transform: translateY(0);
+	}
+}
+
+@-o-keyframes fadeInDown {
+	0% {
+		opacity: 0;
+		-ms-transform: translateY(-20px);
+	}
+
+	100% {
+		opacity: 1;
+		-ms-transform: translateY(0);
+	}
+}
+
+@keyframes fadeInDown {
+	0% {
+		opacity: 0;
+		transform: translateY(-20px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.fadeInDown {
+	-webkit-animation-name: fadeInDown;
+	-moz-animation-name: fadeInDown;
+	-ms-animation-name: fadeInDown;
+	-o-animation-name: fadeInDown;
+	animation-name: fadeInDown;
+}
 .fadeInUp {
 	-webkit-animation-name: fadeInUp;
 	-moz-animation-name: fadeInUp;
@@ -207,16 +197,7 @@ a:link { -webkit-tap-highlight-color: #333; }
 	     -o-animation-fill-mode: both;
 	        animation-fill-mode: both;
 }
-.flipInX {
-	-webkit-backface-visibility: visible !important;
-	-webkit-animation-name: flipInX;
-	-moz-backface-visibility: visible !important;
-	-moz-animation-name: flipInX;
-	-o-backface-visibility: visible !important;
-	-o-animation-name: flipInX;
-	backface-visibility: visible !important;
-	animation-name: flipInX;
-}
+
 /* /Keyframes */
 
 body{
@@ -253,7 +234,7 @@ body.blog-root{
 		background: #f9f9f9;
 		color: #999;
 		text-shadow: 0 0 2px #fff;
-		padding: 100px 0 70px 0;
+		padding: 100px 0 90px 0;
 		text-align: center;
 		border-top: 1px solid #999;
 		font-family: "museo-slab",serif;
@@ -267,7 +248,7 @@ body.blog-root{
 		-moz-transition:color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 		transition:color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 		.animate-long;
-		.flipInX;
+		.fadeInDown;
 		&:last-child{
 			border-bottom: 1px solid #999;
 		}
@@ -279,7 +260,7 @@ body.blog-root{
 			text-align:center;
 			font-weight: normal;
 			text-transform: none;
-			font-size: 12px;
+			font-size: 14px;
 			font-family: "proxima-nova", sans-serif;
 			text-transform: uppercase;
 			margin: 0;
@@ -375,18 +356,24 @@ article{
 	font-size: 24px;
 	text-align: center;
 }
-#subtitle, #date{
+#subtitle{
 	font-family: "proxima-nova",serif;
-	font-size: 26px;
+	font-size: 18px;
 	font-weight: 300;
 	display: block;
 	text-align: center;
 	margin: -5px 0 0 0;
+	text-transform: uppercase;
 }
 #date{
+	font-family: "proxima-nova",serif;
+	font-size: 14px;
+	font-weight: 300;
+	display: block;
+	text-align: center;
+	margin: -5px 0 0 0;
+	text-transform: uppercase;
 	font-style: italic;
-	font-size: 18px;
-	margin-top: 6px;
 }
 
 #body{
