@@ -242,7 +242,7 @@ body.blog-root{
 		font-family: "kulturista-web",serif;
 		font-weight: 900;
 		letter-spacing: 2px;
-		font-size: 55px;
+		font-size: 35px;
 		text-align: center;
 		text-transform: uppercase;
 		text-rendering: optimizelegibility;
@@ -314,7 +314,7 @@ article{
 #feature{
 	width: 100%;
 	max-width:100%;
-	margin-top: 68px;
+	margin-top: 62px;
 	img{
 		width: 100%;
 		max-width:100%;
@@ -428,12 +428,13 @@ footer{
 	padding: 10px 0;
 	text-align:center;
 	font-family: "proxima-nova", sans-serif;
-	p, h2 a{
+	p, a, h2 a{
 		font-family: "proxima-nova",sans-serif;
 		font-size: 14px;
 		font-weight: normal;
 	}
 	h2#footer-links{
+		margin: 0 0 10px 0;
 		a{
 			text-decoration:none;
 			font-size: 14px;
@@ -441,9 +442,6 @@ footer{
 			margin-right:20px;
 			&:last-child{
 				margin-right: 0;
-			}
-			&:hover{
-				text-decoration: underline;
 			}
 		}
 	}
@@ -460,10 +458,12 @@ footer{
 
 
 .oldie{
-
 	body.blog-root{
 		#logo{
 			margin: 10px auto;
+		}
+		a.post{
+			font-size: 55px;
 		}
 		.post{
 			-webkit-transition:color 0.3s ease-in-out;
