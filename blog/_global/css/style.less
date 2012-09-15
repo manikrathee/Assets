@@ -225,10 +225,12 @@ body.blog-root{
 		background: #333;
 		border-bottom: 1px solid #999;
 	}
-	#logo{
-		width: 100%;
-		margin: 10px auto;
-		float: none;
+	#header-link{
+		#logo{
+			width: 100%;
+			margin: 10px auto;
+			float: none;
+		}
 	}
 	a.post{
 		display: block;
@@ -288,15 +290,51 @@ header#page-header{
 	background: #333;
 	border-bottom: 1px solid #fff;
 }
-h1#logo{
-	.ir;
-	background: transparent url('http://assets.manikrathee.com/blog/_global/images/logo.png') no-repeat 50% 50%;
-	height: 53px;
-	width: 52px;
-	margin: 0 auto;
-	padding: 0;
-	/*float: left;*/
+#header-link{
+	height: 55px;
+	&:hover{
+		h1#logo{
+			.animate;
+			.fadeOut;
+		}
+		p#back{
+			display: block;
+			.animate;
+			.fadeInUp;
+		}
+	}
+	h1#logo{
+		.ir;
+		background: transparent url('http://assets.manikrathee.com/blog/_global/images/logo.png') no-repeat 50% 50%;
+		height: 53px;
+		width: 52px;
+		margin: 0 auto;
+		padding: 0;
+		/*float: left;*/
+		-webkit-transition: opacity 0.25s linear;
+		-moz-transition: opacity 0.25s linear;
+		transition: opacity 0.25s linear;
+	}
+	p#back{
+		display: none;
+		width: 100%;
+		margin-top: -36px;
+		padding: 6px 0;
+		text-align: center;
+		font-family: "proxima-nova", sans-serif;
+		text-indent: 0;
+		text-align: center;
+		font-size: 11px;
+		text-transform: uppercase;
+		color: #F9F9F9;
+		margin-top: -40px;
+		padding: 8px 0;
+		-webkit-transition: opacity 0.25s linear;
+		-moz-transition: opacity 0.25s linear;
+		transition: opacity 0.25s linear;
+	}
 }
+
 h1#title{
 	font-family: "proxima-nova", sans-serif;
 	font-weight: 300;
