@@ -1,0 +1,141 @@
+/* Base Styles */
+
+/* Highlight */
+::-moz-selection{ background: #333; color:#fff; text-shadow: none; }
+::selection { background:#333; color:#fff; text-shadow: none; }
+a:link { -webkit-tap-highlight-color: #333; }
+
+/* 
+Retina Mixin Autocompiler
+.logo {
+  .at2x('/images/my_image.png', 200px, 100px);
+}
+ */
+ 
+ body{
+ 	background: #f9f9f9 ;
+ 	// url('http://static.tumblr.com/4horibg/D9Ymarkgu/200-78-8.png') repeat 50% 50%
+ 	color: #999;
+ 	// font-family: "minion-pro", georgia, serif;
+ 	font-family:  "proxima-nova", helvetica, tahoma, verdana, sans-serif;
+ 	font-size: 12px;
+ 	a{
+ 		color: #333;
+ 		text-decoration: none;
+ 		&:hover{
+	 		text-decoration: underline;
+	 	}
+ 	}
+ 	img{
+ 		max-width: 100%;
+ 	}
+ }
+#who-am-i{
+	padding: 30px 0;
+	border-bottom: 1px solid rgb(219, 219, 219);
+	margin-bottom: 30px;
+ 	text-align: center;
+ 	.animate;
+ 	.fadeIn;
+ 	a{
+ 		color: #777;
+ 	}
+ }
+ h1{
+	font-size: 31px;
+	text-transform: uppercase;
+	font-weight: 500;
+	line-height: 1;
+	margin: 0;
+ }
+ h2{
+ 	font-size: 11px;
+ 	margin: 0;
+	text-transform: uppercase;
+	font-weight: 100;
+ }
+ #pagination{
+ 	margin-top: 20px;
+ 	border-top: 1px solid #999;
+ 	overflow: hidden;
+ 	zoom: 1;
+ 	a{
+ 		display: block;
+ 		width: 100%;
+ 		padding: 20px 0;
+ 		text-align: center;
+ 		font-size: 20px;
+ 		color: #333;
+ 		background: #f9f9f9;
+ 		text-decoration: none;
+		-webkit-transition: background 0.25s linear, color 0.25s linear;
+		-moz-transition: background 0.25s linear, color 0.25s linear;
+		transition: background 0.25s linear, color 0.25s linear;
+		&.half{
+			width: 50%;	
+			float: left;
+		}
+ 		&:hover{
+ 			background: #265d90;
+ 			color: #fff;
+ 		}
+ 	}
+ }
+ .item{
+ 	position: relative;
+ 	background: #fff;
+ 	border: 1px solid #f9f9f9;
+ 	margin: 0 auto 10px;
+ 	padding: 20px;
+ 	-webkit-transition: margin 1s linear;
+	-moz-transition: margin 1s linear;
+	transition: margin 1s linear;
+ 	aside.icon{
+ 		text-align: center;
+		padding: 15px 0;
+		background: #fff;
+		font-size: 30px;
+ 	}
+ 	.post-image{
+ 		width: 100%;
+ 	}
+ 	&.text{
+ 		text-align: center;
+ 	}
+ 	&.video{
+ 		display: none;
+ 	}
+ }
+ .actions{
+ 	overflow: hidden;
+ 	zoom: 1;
+	width: 100%;
+ 	ul{
+ 		margin: 0;
+ 		padding:0;
+ 		li{
+			display: block;
+ 			width: 50%;
+ 			list-style-type: none;
+ 			float: left;
+			a{
+				display: block;
+				background: #fff;
+				padding: 10px 0;
+	 			width: 100%;
+	 			font-size: 20px;
+	 			text-align: center;
+ 				color: #999;
+				text-decoration: none;
+	 			-webkit-transition: background 0.25s linear, color 0.25s linear;
+				-moz-transition: background 0.25s linear, color 0.25s linear;
+				transition: background 0.25s linear, color 0.25s linear;
+				&:hover{
+					background: #265d90;
+					color: #fff;
+					text-shadow: darken(#265d90, 10%);
+				}
+			}
+ 		}
+ 	}
+ }

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6 oldie"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7 oldie"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8 oldie"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Manik Rathee's Tumblr</title>
+	<meta name="description" content="Manik Rathee is a designer, developer and photographer. These are images he likes.">
+	<meta name="keyword" content="photography, manik, rathee, design, vintage, vsco, fade, camera, leica, canon, blog, tumblog, music, lyrics">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="http://static.tumblr.com/4horibg/go4mark8f/favicon.ico">
+	<link rel="apple-touch-icon" href="http://static.tumblr.com/4horibg/qsnmark8s/apple-touch-icon.png">
+	<link rel="stylesheet" href="http://assets.manikrathee.com/global/fonts/symbolset/ss-social.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="http://assets.manikrathee.com/global/fonts/symbolset/ss-standard.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="http://assets.manikrathee.com/tumblr/css/style.css" type="text/css">
+	<script src="http://static.tumblr.com/4horibg/JhFmark66/modernizr-2.5.3.min.js"></script>
+	<script type="text/javascript" src="//use.typekit.net/dmi4izv.js"></script> 
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+<body>
+	<div id="who-am-i">
+		<h1><a id="logo" href="http://manikrathee.tumblr.com" title="Manik Rathee">Manik Rathee</a></h1>
+		<h2><a href="http://www.manikrathee.com" title="Manik Rathee">designer</a>, <a href="http://blog.manikrathee.com" title="Manik Rathee's Blog">developer</a>, <a href="http://www.manikratheephotography.com" title="Manik Rathee Photography">photographer</a></h2>
+	</div> <!-- /left -->
+	<div id="posts">		
+		{block:Posts} 			
+		   	 <div id="{PostID}" class="item {PostType} {block:PermalinkPage} post_permalink{/block:PermalinkPage}">
+		   	 	<aside class="ss-icon icon {block:Photo} photo-icon{/block:Photo}{block:Text} text-icon{/block:Text}">{block:Photo}camera{/block:Photo}{block:Text}book{/block:Text}</aside>
+		   	 	<!-- Photo -->
+		   	 	{block:Photo}
+		    			<img class="post-image" data-original="{PhotoURL-500}" src="http://static.tumblr.com/4horibg/uEsmb4ptj/294.gif">
+		    		{/block:Photo}  
+		    		<!-- Text -->
+		    		{block:Text}
+		    			{block:Title} 
+		    				<h3>{Title}</h3>
+		    			{/block:Title}	
+					{Body} 
+		    		{/block:Text}
+		    		
+		    		<section class="actions">
+		    			<ul>
+		    				<li><a class="ss-icon" href="{ReblogURL}" title="Reblog">Retweet</a></li>
+                      		<li><a class="ss-icon" href="{ReblogURL}" title="Like">Heart</a></li>
+		    			</ul>
+		    		</section>        
+		    		 
+		                     
+		           </div>
+		{/block:Posts}
+		{block:IndexPage}
+			{block:Pagination}
+			<div id="pagination">
+				{block:PreviousPage}
+				<a class="ss-icon half" href="{PreviousPage}" title="Go To Previous Page">Previous</a>
+				{/block:PreviousPage}
+				{block:NextPage}
+				<a class="ss-icon {block:PreviousPage}half{/block:PreviousPage}" href="{NextPage}" title="Go To Next Page">Next</a>
+				{/block:NextPage}
+			</div> <!-- /pagination -->
+			{/block:Pagination}
+		{/block:IndexPage}	
+	</div> <!-- /right -->
+	
+					
+					
+					
+					
+
+	<script src="http://static.tumblr.com/4horibg/NL6mark6j/jquery-1.7.1.min.js"></script>
+	<script src="http://assets.manikrathee.com/global/js/lazyload.js"></script>
+	<script src="http://assets.manikrathee.com/html/global/fonts/symbolset/ss-legacy.js"></script>
+	<script src="http://assets.manikrathee.com/html/global/fonts/symbolset/ss-social.js"></script>
+	<!--[if lt IE 7 ]>
+	<script src="http://static.tumblr.com/4horibg/pg0mark6x/dd_belatedpng.js"></script>
+	<script> DD_belatedPNG.fix('img, .png_bg');</script>
+	<![endif]-->
+	<script type="text/javascript">
+		(function($, win, doc) {
+			$('.item img').lazyload({  
+				effect : "fadeIn",
+				threshold : 100
+			});
+		})(jQuery, window, document);
+	</script>
+</body>
+</html>
