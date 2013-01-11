@@ -224,19 +224,35 @@ article{
 .body, #body{
 	&.intro{
 		width: 100%;
+		max-width: 100%;
 		font-size: 30px;
-		margin: 20px auto;
-		padding: 20px 0;
-		border-top: 1px solid rgba(0,0,0,0.2);
-		border-bottom: 1px solid rgba(0,0,0,0.2);
+		margin: 0 auto;
+		padding: 0;
 		line-height: 1.6;
 		font-weight: bold;
 		font-style: italic;
-		opacity: 0.9;
 		p{
 			display: block;
-			width: 800px;
-			max-width:92%;
+			width: 1200px;
+			max-width: 92%;
+			margin: 0 auto;
+			padding: 15px 0;
+			font-size: 30px;
+			&:before{
+				display: block;
+				content: '';
+				height: 1px;
+				background: rgba(0,0,0,0.2);
+				margin: 10px 0;
+			}
+			&:after{
+				display: block;
+				content: '';
+				height: 1px;
+				background: rgba(0,0,0,0.2);
+				margin: 10px 0;
+			}
+			
 		}
 		a{
 			font-size: 15px;
