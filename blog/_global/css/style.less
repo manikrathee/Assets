@@ -1,5 +1,6 @@
 @import "import/normalize";
 @import "import/core";
+@import "import/animate";
 
 
 /* Highlight */
@@ -7,203 +8,15 @@
 ::selection { background:#333; color:#fff; text-shadow: none; }
 a:link { -webkit-tap-highlight-color: #333; }
 
-/* Keyframes */
-
-@-webkit-keyframes fadeOut {
-	0% {opacity: 1;}
-	100% {opacity: 0;}
-}
-
-@-moz-keyframes fadeOut {
-	0% {opacity: 1;}
-	100% {opacity: 0;}
-}
-
-@-ms-keyframes fadeOut {
-	0% {opacity: 1;}
-	100% {opacity: 0;}
-}
-
-@-o-keyframes fadeOut {
-	0% {opacity: 1;}
-	100% {opacity: 0;}
-}
-
-@keyframes fadeOut {
-	0% {opacity: 1;}
-	100% {opacity: 0;}
-}
-@-webkit-keyframes fadeInUp {
-	0% {
-		opacity: 0;
-		-webkit-transform: translateY(20px);
-	}
-
-	100% {
-		opacity: 1;
-		-webkit-transform: translateY(0);
-	}
-}
-
-@-moz-keyframes fadeInUp {
-	0% {
-		opacity: 0;
-		-moz-transform: translateY(20px);
-	}
-
-	100% {
-		opacity: 1;
-		-moz-transform: translateY(0);
-	}
-}
-
-@-ms-keyframes fadeInUp {
-	0% {
-		opacity: 0;
-		-ms-transform: translateY(20px);
-	}
-
-	100% {
-		opacity: 1;
-		-ms-transform: translateY(0);
-	}
-}
-
-@-o-keyframes fadeInUp {
-	0% {
-		opacity: 0;
-		-o-transform: translateY(20px);
-	}
-
-	100% {
-		opacity: 1;
-		-o-transform: translateY(0);
-	}
-}
-
-@keyframes fadeInUp {
-	0% {
-		opacity: 0;
-		transform: translateY(20px);
-	}
-
-	100% {
-		opacity: 1;
-		transform: translateY(0);
-	}
-}
-.animate {
-	-webkit-animation: 0.6s ease;
-	   -moz-animation: 0.6s ease;
-	    -ms-animation: 0.6s ease;
-	     -o-animation: 0.6s ease;
-	        animation: 0.6s ease;
-	-webkit-animation-fill-mode: both;
-	   -moz-animation-fill-mode: both;
-	    -ms-animation-fill-mode: both;
-	     -o-animation-fill-mode: both;
-	        animation-fill-mode: both;
-}
-@-webkit-keyframes fadeInDown {
-	0% {
-		opacity: 0;
-		-webkit-transform: translateY(-20px);
-	}
-
-	100% {
-		opacity: 1;
-		-webkit-transform: translateY(0);
-	}
-}
-
-@-moz-keyframes fadeInDown {
-	0% {
-		opacity: 0;
-		-moz-transform: translateY(-20px);
-	}
-
-	100% {
-		opacity: 1;
-		-moz-transform: translateY(0);
-	}
-}
-
-@-ms-keyframes fadeInDown {
-	0% {
-		opacity: 0;
-		-ms-transform: translateY(-20px);
-	}
-
-	100% {
-		opacity: 1;
-		-ms-transform: translateY(0);
-	}
-}
-
-@-o-keyframes fadeInDown {
-	0% {
-		opacity: 0;
-		-ms-transform: translateY(-20px);
-	}
-
-	100% {
-		opacity: 1;
-		-ms-transform: translateY(0);
-	}
-}
-
-@keyframes fadeInDown {
-	0% {
-		opacity: 0;
-		transform: translateY(-20px);
-	}
-
-	100% {
-		opacity: 1;
-		transform: translateY(0);
-	}
-}
-
-.fadeInDown {
-	-webkit-animation-name: fadeInDown;
-	-moz-animation-name: fadeInDown;
-	-ms-animation-name: fadeInDown;
-	-o-animation-name: fadeInDown;
-	animation-name: fadeInDown;
-}
-.fadeInUp {
-	-webkit-animation-name: fadeInUp;
-	-moz-animation-name: fadeInUp;
-	-ms-animation-name: fadeInUp;
-	-o-animation-name: fadeInUp;
-	animation-name: fadeInUp;
-}
-.fadeOut {
-	-webkit-animation-name: fadeOut;
-	-moz-animation-name: fadeOut;
-	-ms-animation-name: fadeOut;
-	-o-animation-name: fadeOut;
-	animation-name: fadeOut;
-}
-.animate-long {
-	-webkit-animation: 1.6s ease;
-	   -moz-animation: 1.6s ease;
-	    -ms-animation: 1.6s ease;
-	     -o-animation: 1.6s ease;
-	        animation: 1.6s ease;
-	-webkit-animation-fill-mode: both;
-	   -moz-animation-fill-mode: both;
-	    -ms-animation-fill-mode: both;
-	     -o-animation-fill-mode: both;
-	        animation-fill-mode: both;
-}
 
 /* /Keyframes */
 
 body{
 	background: #e0e0e0;
+	background: rgb(248, 248, 248);
 	color: #333;
 	text-rendering: optimizelegibility;
+	font-family: "ff-meta-serif-web-pro",serif;
 }
 a{
 	color: #333;
@@ -213,9 +26,10 @@ a{
 	transition: color 0.2s ease-in-out;
 }
 img{
-	max-width:100%;
+	max-width: 100%;
 }
 i{
+	font-size: 0.8em;
 	font-style: italic;
 }
 
@@ -242,13 +56,12 @@ body.blog-root{
 		padding: 100px 0 90px 0;
 		text-align: center;
 		border-top: 1px solid #999;
-		font-family: "kulturista-web",serif;
+		// font-family: "kulturista-web",serif;
 		font-weight: 900;
 		letter-spacing: 2px;
 		font-size: 35px;
 		text-align: center;
 		text-transform: uppercase;
-		text-rendering: optimizelegibility;
 		-webkit-transition:color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 		-moz-transition:color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 		transition:color 0.3s ease-in-out, background-color 0.3s ease-in-out;
@@ -341,8 +154,8 @@ header#page-header{
 }
 
 h1#title{
-	font-family: "proxima-nova", sans-serif;
-	font-weight: 300;
+	// font-family: "proxima-nova", sans-serif;
+	font-weight: 600;
 	line-height: 1;
 	font-size: 21px;
 	margin-top: 4px;
@@ -380,7 +193,7 @@ article{
 	margin:0 20px;
 }
 #post-title{
-	font-family: "kulturista-web",serif;
+	// font-family: "kulturista-web",serif;
 	font-weight: 900;
 	letter-spacing: 2px;
 	/*color: #fff;*/
@@ -389,29 +202,46 @@ article{
 	text-align: center;
 }
 #subtitle{
-	font-family: "proxima-nova",serif;
+	// font-family: "proxima-nova",serif;
 	font-size: 18px;
 	font-weight: 300;
 	display: block;
 	text-align: center;
 	margin: 0;
-	text-transform: uppercase;
+	// text-transform: uppercase;
 }
 #date{
-	font-family: "proxima-nova",serif;
+	// font-family: "proxima-nova",serif;
 	font-size: 14px;
 	font-weight: 300;
 	display: block;
 	text-align: center;
 	margin: 0;
-	text-transform: uppercase;
+	// text-transform: uppercase;
 	font-style: italic;
 }
 
-#body{
+.body, #body{
+	&.intro{
+		width: 800px;
+		max-width:92%;
+		font-size: 30px;
+		margin: 30px 0 40px 0;
+		border-top: 1px solid rgba(0,0,0,0.2);
+		border-bottom: 1px solid rgba(0,0,0,0.2);
+		line-height: 1.6;
+		font-weight: bold;
+		font-style: italic;
+		opacity: 0.9;
+		a{
+			font-size: 15px;
+			display: block;
+			text-align: center;
+		}
+	}
 	position: relative;
 	z-index: 20;
-	background: #f5f5f5;
+	background: #fff;
 	width: 650px;
 	max-width:92%;
 	margin-left: auto;
@@ -444,21 +274,24 @@ article{
 	}
 }
 h4{
-	font-family: "proxima-nova", sans-serif;
-	font-size: 28px;
-	margin:0 0 10px 0;
-	font-weight: 300;
-	text-transform: uppercase;
+	// font-family: "ff-meta-serif-web-pro",serif;
+	font-size: 24px;
+	margin: 0 0 10px 0;
+	// font-weight: bold;
+	font-style: italic;
 }
 p{
-	font-family: "ff-meta-serif-web-pro",serif;
+	// font-family: "ff-meta-serif-web-pro",serif;
 	font-size: 20px;
 	font-weight: 300;
 	&.intro{
 		/*font-family: "proxima-nova", sans-serif;*/
-		font-size: 28px;
+		font-size: 30px;
 		margin: 30px 0 40px 0;
 		line-height: 1.6;
+		font-weight: bold;
+		font-style: italic;
+		opacity: 0.9;
 		a{
 			font-size: 15px;
 			display: block;
@@ -558,7 +391,7 @@ footer{
 		margin: 8px 0 6px 0;
 		letter-spacing: 1.2px;
 	}
-	#body{
+	.body, #body{
 		max-width:92%;
 		padding: 10px 50px;
 	}
