@@ -2,6 +2,10 @@
 @import "import/core";
 @import "import/animate";
 
+@font-face{
+	font-family: calendas;
+	src: url('../../../global/fonts/calendas/Calendas_Plus_Italic.otf');
+}
 
 /* Highlight */
 ::-moz-selection{ background: #333; color:#fff; text-shadow: none; }
@@ -17,6 +21,9 @@ body{
 	color: #333;
 	text-rendering: optimizelegibility;
 	font-family: "ff-meta-serif-web-pro",serif;
+	&.bare{
+		background: transparent;
+	}
 }
 a{
 	color: #333;
@@ -57,6 +64,7 @@ body.blog-root{
 		text-align: center;
 		border-top: 1px solid #999;
 		// font-family: "kulturista-web",serif;
+		font-family: "calendas",serif;
 		font-weight: 900;
 		font-style: italic;
 		// letter-spacing: 2px;
@@ -452,7 +460,11 @@ footer{
 		border: none;
 	}
 }
-
+#disqus_thread{
+	#footer{
+		display: none;
+	}
+}
 
 @media (min-width: 768px) {
 	.oldie;
