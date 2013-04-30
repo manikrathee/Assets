@@ -5,6 +5,71 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
 
 
 /* **********************************************
+     Begin picturefill.js
+********************************************** */
+
+/*! Picturefill - Responsive Images that work today. (and mimic the proposed Picture element with divs). Author: Scott Jehl, Filament Group, 2012 | License: MIT/GPLv2 */
+
+(function( w ){
+	
+	// Enable strict mode
+	"use strict";
+
+	w.picturefill = function() {
+		var ps = w.document.getElementsByTagName( "div" );
+		
+		// Loop the pictures
+		for( var i = 0, il = ps.length; i < il; i++ ){
+			if( ps[ i ].getAttribute( "data-picture" ) !== null ){
+
+				var sources = ps[ i ].getElementsByTagName( "div" ),
+					matches = [];
+			
+				// See if which sources match
+				for( var j = 0, jl = sources.length; j < jl; j++ ){
+					var media = sources[ j ].getAttribute( "data-media" );
+					// if there's no media specified, OR w.matchMedia is supported 
+					if( !media || ( w.matchMedia && w.matchMedia( media ).matches ) ){
+						matches.push( sources[ j ] );
+					}
+				}
+
+			// Find any existing img element in the picture element
+			var picImg = ps[ i ].getElementsByTagName( "img" )[ 0 ];
+
+			if( matches.length ){			
+				if( !picImg ){
+					picImg = w.document.createElement( "img" );
+					picImg.alt = ps[ i ].getAttribute( "data-alt" );
+					ps[ i ].appendChild( picImg );
+				}
+				
+				picImg.src =  matches.pop().getAttribute( "data-src" );
+			}
+			else if( picImg ){
+				ps[ i ].removeChild( picImg );
+			}
+		}
+		}
+	};
+	
+	// Run on resize and domready (w.load as a fallback)
+	if( w.addEventListener ){
+		w.addEventListener( "resize", w.picturefill, false );
+		w.addEventListener( "DOMContentLoaded", function(){
+			w.picturefill();
+			// Run once only
+			w.removeEventListener( "load", w.picturefill, false );
+		}, false );
+		w.addEventListener( "load", w.picturefill, false );
+	}
+	else if( w.attachEvent ){
+		w.attachEvent( "onload", w.picturefill );
+	}
+	
+}( this ));
+
+/* **********************************************
      Begin lazyload.js
 ********************************************** */
 
@@ -23,54 +88,6 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
  *
  */
 (function(a,b){$window=a(b),a.fn.lazyload=function(c){function f(){var b=0;d.each(function(){var c=a(this);if(e.skip_invisible&&!c.is(":visible"))return;if(!a.abovethetop(this,e)&&!a.leftofbegin(this,e))if(!a.belowthefold(this,e)&&!a.rightoffold(this,e))c.trigger("appear");else if(++b>e.failure_limit)return!1})}var d=this,e={threshold:0,failure_limit:0,event:"scroll",effect:"show",container:b,data_attribute:"original",skip_invisible:!0,appear:null,load:null};return c&&(undefined!==c.failurelimit&&(c.failure_limit=c.failurelimit,delete c.failurelimit),undefined!==c.effectspeed&&(c.effect_speed=c.effectspeed,delete c.effectspeed),a.extend(e,c)),$container=e.container===undefined||e.container===b?$window:a(e.container),0===e.event.indexOf("scroll")&&$container.bind(e.event,function(a){return f()}),this.each(function(){var b=this,c=a(b);b.loaded=!1,c.one("appear",function(){if(!this.loaded){if(e.appear){var f=d.length;e.appear.call(b,f,e)}a("<img />").bind("load",function(){c.hide().attr("src",c.data(e.data_attribute))[e.effect](e.effect_speed),b.loaded=!0;var f=a.grep(d,function(a){return!a.loaded});d=a(f);if(e.load){var g=d.length;e.load.call(b,g,e)}}).attr("src",c.data(e.data_attribute))}}),0!==e.event.indexOf("scroll")&&c.bind(e.event,function(a){b.loaded||c.trigger("appear")})}),$window.bind("resize",function(a){f()}),f(),this},a.belowthefold=function(c,d){var e;return d.container===undefined||d.container===b?e=$window.height()+$window.scrollTop():e=$container.offset().top+$container.height(),e<=a(c).offset().top-d.threshold},a.rightoffold=function(c,d){var e;return d.container===undefined||d.container===b?e=$window.width()+$window.scrollLeft():e=$container.offset().left+$container.width(),e<=a(c).offset().left-d.threshold},a.abovethetop=function(c,d){var e;return d.container===undefined||d.container===b?e=$window.scrollTop():e=$container.offset().top,e>=a(c).offset().top+d.threshold+a(c).height()},a.leftofbegin=function(c,d){var e;return d.container===undefined||d.container===b?e=$window.scrollLeft():e=$container.offset().left,e>=a(c).offset().left+d.threshold+a(c).width()},a.inviewport=function(b,c){return!a.rightofscreen(b,c)&&!a.leftofscreen(b,c)&&!a.belowthefold(b,c)&&!a.abovethetop(b,c)},a.extend(a.expr[":"],{"below-the-fold":function(c){return a.belowthefold(c,{threshold:0,container:b})},"above-the-top":function(c){return!a.belowthefold(c,{threshold:0,container:b})},"right-of-screen":function(c){return a.rightoffold(c,{threshold:0,container:b})},"left-of-screen":function(c){return!a.rightoffold(c,{threshold:0,container:b})},"in-viewport":function(c){return!a.inviewport(c,{threshold:0,container:b})},"above-the-fold":function(c){return!a.belowthefold(c,{threshold:0,container:b})},"right-of-fold":function(c){return a.rightoffold(c,{threshold:0,container:b})},"left-of-fold":function(c){return!a.rightoffold(c,{threshold:0,container:b})}})})(jQuery,window)
-
-/* **********************************************
-     Begin fittext.js
-********************************************** */
-
-/*global jQuery */
-/*!
-* FitText.js 1.1
-*
-* Copyright 2011, Dave Rupert http://daverupert.com
-* Released under the WTFPL license
-* http://sam.zoy.org/wtfpl/
-*
-* Date: Thu May 05 14:23:00 2011 -0600
-*/
-
-(function( $ ){
-
-  $.fn.fitText = function( kompressor, options ) {
-
-    // Setup options
-    var compressor = kompressor || 1,
-        settings = $.extend({
-          'minFontSize' : Number.NEGATIVE_INFINITY,
-          'maxFontSize' : Number.POSITIVE_INFINITY
-        }, options);
-
-    return this.each(function(){
-
-      // Store the object
-      var $this = $(this);
-
-      // Resizer() resizes items based on the object width divided by the compressor * 10
-      var resizer = function () {
-        $this.css('font-size', Math.max(Math.min($this.width() / (compressor*10), parseFloat(settings.maxFontSize)), parseFloat(settings.minFontSize)));
-      };
-
-      // Call once to set.
-      resizer();
-
-      // Call on resize. Opera debounces their resize by default.
-      $(window).on('resize orientationchange', resizer);
-
-    });
-
-  };
-
-})( jQuery );
 
 /* **********************************************
      Begin lettering.js
@@ -144,71 +161,6 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
 })(jQuery);
 
 /* **********************************************
-     Begin picturefill.js
-********************************************** */
-
-/*! Picturefill - Responsive Images that work today. (and mimic the proposed Picture element with divs). Author: Scott Jehl, Filament Group, 2012 | License: MIT/GPLv2 */
-
-(function( w ){
-	
-	// Enable strict mode
-	"use strict";
-
-	w.picturefill = function() {
-		var ps = w.document.getElementsByTagName( "div" );
-		
-		// Loop the pictures
-		for( var i = 0, il = ps.length; i < il; i++ ){
-			if( ps[ i ].getAttribute( "data-picture" ) !== null ){
-
-				var sources = ps[ i ].getElementsByTagName( "div" ),
-					matches = [];
-			
-				// See if which sources match
-				for( var j = 0, jl = sources.length; j < jl; j++ ){
-					var media = sources[ j ].getAttribute( "data-media" );
-					// if there's no media specified, OR w.matchMedia is supported 
-					if( !media || ( w.matchMedia && w.matchMedia( media ).matches ) ){
-						matches.push( sources[ j ] );
-					}
-				}
-
-			// Find any existing img element in the picture element
-			var picImg = ps[ i ].getElementsByTagName( "img" )[ 0 ];
-
-			if( matches.length ){			
-				if( !picImg ){
-					picImg = w.document.createElement( "img" );
-					picImg.alt = ps[ i ].getAttribute( "data-alt" );
-					ps[ i ].appendChild( picImg );
-				}
-				
-				picImg.src =  matches.pop().getAttribute( "data-src" );
-			}
-			else if( picImg ){
-				ps[ i ].removeChild( picImg );
-			}
-		}
-		}
-	};
-	
-	// Run on resize and domready (w.load as a fallback)
-	if( w.addEventListener ){
-		w.addEventListener( "resize", w.picturefill, false );
-		w.addEventListener( "DOMContentLoaded", function(){
-			w.picturefill();
-			// Run once only
-			w.removeEventListener( "load", w.picturefill, false );
-		}, false );
-		w.addEventListener( "load", w.picturefill, false );
-	}
-	else if( w.attachEvent ){
-		w.attachEvent( "onload", w.picturefill );
-	}
-	
-}( this ));
-
-/* **********************************************
      Begin scripts.js
 ********************************************** */
 
@@ -219,7 +171,9 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
  *
  */
 
-//@codekit-prepend "libs/jquery-1.7.1.min.js", "libs/lazyload.js", "libs/fittext.js", "libs/lettering.js", "libs/picturefill.js";
+//@codekit-prepend "libs/jquery-1.7.1.min.js", "libs/picturefill.js", "libs/lazyload.js", "libs/lettering.js";
+
+//"libs/fittext.js"
 
 var win   = $(window);
 var doc   = $(document);
@@ -233,13 +187,11 @@ var googleAnalyticsID = "UA-19400273-5";
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', googleAnalyticsID]);
 _gaq.push(['_trackPageview']);
-
 (function() {
   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
   ga.src = ('https:' === document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 })();
-
 
 /* Reading Time */
 doc.ready(function() {
