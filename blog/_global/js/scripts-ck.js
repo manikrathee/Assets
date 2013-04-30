@@ -8811,8 +8811,7 @@ _gaq.push(['_trackPageview']);
 $(document).ready(function() {
   console.log('ready');
   $(".time").text(function (index, value) {
-    
-  console.log('time');
+    console.log('time');
     return Math.round(parseFloat(value));
   });
 });
