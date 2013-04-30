@@ -1,6 +1,7 @@
 @import "import/normalize";
 @import "import/core";
 @import "import/animate";
+@import "import/ss-social-circle";
 
 /* Highlight */
 ::-moz-selection{ background: #333; color:#fff; text-shadow: none; }
@@ -8,16 +9,21 @@
 a:link { -webkit-tap-highlight-color: #333; }
 
 
-/* /Keyframes */
 
 body{
-	// background: #e0e0e0;
 	background: rgb(252, 252, 252);
 	color: #333;
 	text-rendering: optimizelegibility;
 	font-family: "ff-meta-serif-web-pro",serif;
+	-moz-font-feature-settings:"liga=1, dlig=1"; 
+	-moz-font-feature-settings:"liga", "dlig"; /* EDIT: new syntax for FF 15+ */ 
+	-ms-font-feature-settings:"liga", "dlig"; 
+	-o-font-feature-settings:"liga", "dlig"; 
+	-webkit-font-feature-settings:"liga", "dlig"; 
+	font-feature-settings:"liga", "dlig";
 	&.bare{
 		background: transparent;
+		margin: 40px 0;
 	}
 }
 a{
@@ -59,6 +65,7 @@ body.blog-root{
 		text-align: center;
 		border-top: 1px solid #999;
 		// font-family: "kulturista-web",serif;
+		font-family: "garamond-premier-pro",serif;
 		font-weight: 900;
 		font-style: italic;
 		// letter-spacing: 2px;
@@ -121,7 +128,6 @@ header#page-header{
 		}
 		p#back{
 			display: block;
-			.animate;
 			.fadeInUp;
 		}
 	}
@@ -151,6 +157,8 @@ header#page-header{
 		color: #F9F9F9;
 		margin-top: -40px;
 		padding: 8px 0;
+		.animate;
+		.fadeOut;
 		-webkit-transition: opacity 0.25s linear;
 		-moz-transition: opacity 0.25s linear;
 		transition: opacity 0.25s linear;
@@ -198,10 +206,12 @@ article{
 }
 #post-title{
 	// font-family: "kulturista-web",serif;
+	font-family: "garamond-premier-pro",serif;
+	font-style: italic;
 	font-weight: 900;
-	letter-spacing: 2px;
+	// letter-spacing: 2px;
 	/*color: #fff;*/
-	margin:0;
+	margin: 0;
 	font-size: 24px;
 	text-align: center;
 }
@@ -404,7 +414,7 @@ footer{
 	#post-title-container{
 		padding: 0;
 		background: none;
-		margin: -308px auto 215px auto;
+		margin: -308px auto 240px auto;
 		color: #fff;
 		/*text-shadow: 1px 1px 0 #333;*/
 	}
@@ -414,7 +424,7 @@ footer{
 	#subtitle{
 		font-size: 14px;
 		margin: 8px 0 6px 0;
-		letter-spacing: 1.2px;
+		// letter-spacing: 1.2px;
 	}
 	.body, #body{
 		max-width:92%;
@@ -452,11 +462,14 @@ footer{
 	}
 	footer{
 		border: none;
+		.ss-icon{
+			font-size: 2em;
+		}
 	}
 }
 #disqus_thread{
 	#footer{
-		display: none;
+		display: none !important;
 	}
 }
 
