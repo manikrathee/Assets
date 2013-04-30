@@ -5,15 +5,15 @@
  *
  */
 
-//@codekit-prepend "libs/jquery-1.7.1.min.js", "libs/picturefill.js", "libs/lazyload.js", "libs/lettering.js";
+//@codekit-prepend "libs/jquery-2.0.js", "libs/lazyload.js";
 
 //"libs/fittext.js"
+//"libs/picturefill.js"
 
 var win   = $(window);
 var doc   = $(document);
 var body  = $('body');
 var $self = $(this);
-
 
 /*  Google Analytics  */
 var googleAnalyticsID = "UA-19400273-5";
@@ -28,8 +28,11 @@ _gaq.push(['_trackPageview']);
 })();
 
 /* Reading Time */
-doc.ready(function() {
+$(document).ready(function() {
+  console.log('ready');
   $(".time").text(function (index, value) {
+    
+  console.log('time');
     return Math.round(parseFloat(value));
   });
 });
