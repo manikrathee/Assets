@@ -1,40 +1,383 @@
 /*! Stylesheet built and maintained by Manik Rathee, @manikrathee / www.manikrathee.com */
  
 @import "import/normalize";
-@import "import/1140";
 @import "import/core";
 @import "import/mixins";
 @import "import/media-queries";
 @import "import/ss-social";
 @import "import/ss-standard";
 @import "import/animation";
-
-// @import "bourbon";
-
-
-@import "styles/base";
+@import "bourbon";
+@import "compass";
 
 
-@media (max-width: 768px) {
-	@import "styles/mobile";
+/* Highlight */
+::-moz-selection{ background: #333; color:#fff; text-shadow: none; }
+::selection { background:#333; color:#fff; text-shadow: none; }
+a:link { -webkit-tap-highlight-color: #333; }
+
+/* Typography */
+$body-copy: "ff-meta-serif-web-pro",serif;
+$headlines: "garamond-premier-pro","Adobe Jenson Pro", "Hoefler Text", "Centaur", "Centaur MT", "Stempel Garamond", "Adobe Garamond Pro", "Adobe Garamond", Garamond, Georgia, serif;
+
+
+body{
+  background: rgb(240, 240, 240);
+  color: #333;
+  text-rendering: optimizelegibility;
+  font-family: $body-copy;
+}
+a{
+  color: #333;
+  text-decoration:none;
+  -webkit-transition: color 0.2s ease-in-out;
+  -moz-transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out;
+}
+img{
+  max-width: 100%;
+}
+i{
+  font-size: 0.8em;
+  font-style: italic;
 }
 
-@media (min-width: 769px){
-	@import "styles/small-screen";
+body.blog-root{
+  #page-header{
+    position: relative;
+    background: #333;
+    border-bottom: 1px solid #999;
+  }
+  #logo{
+    .ir;
+    background: transparent url('http://assets.manikrathee.com/blog/_global/images/logo.png') no-repeat 50% 50%;
+    height: 53px;
+    width: 52px;
+    width: 100%;
+    margin: 10px auto;
+    float: none;
+  }
+  a.post{
+    display: block;
+    width:100%;
+    background: #f9f9f9;
+    color: #999;
+    padding: 100px 0 90px 0;
+    text-align: center;
+    border-top: 1px solid #999;
+    font-family: "garamond-premier-pro",serif;
+    // -moz-font-feature-settings:"liga=1, dlig=1"; 
+    // -moz-font-feature-settings:"liga", "dlig"; /* EDIT: new syntax for FF 15+ */ 
+    // -ms-font-feature-settings:"liga", "dlig"; 
+    // -o-font-feature-settings:"liga", "dlig"; 
+    // -webkit-font-feature-settings:"liga", "dlig"; 
+    // font-feature-settings:"liga", "dlig";
+    font-weight: 900;
+    font-style: italic;
+    // letter-spacing: 2px;
+    line-height: 1;
+    font-size: 35px;
+    text-align: center;
+    // text-transform: uppercase;
+    -webkit-transition:color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    -moz-transition:color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    transition:color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    .animate-long;
+    .fadeInDown;
+    &:last-child{
+      border-bottom: 1px solid #999;
+    }
+    &:hover{
+      color: red;
+    }
+    .info{
+      width: 100%;
+      text-align:center;
+      font-weight: normal;
+      text-transform: none;
+      font-size: 14px;
+      // font-family: "proxima-nova", sans-serif;
+      text-transform: uppercase;
+      margin: 0;
+      &.date{
+        margin-top: 2px;
+      }
+    }
+  }
 }
 
-@media (min-width: 960px){
-	@import "styles/medium-screen";
+
+
+.container{
+  width:96%;
+  padding:0 2%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1000px;
 }
 
-@media (min-width: 1300px){
-	@import "styles/large-screen";
+header#page-header{
+  position: absolute;
+  top: 0;
+  z-index: 50;
+  width: 100%;
+  padding: 4px 0;
+  background: #333;
+  border-bottom: 1px solid #fff;
+}
+#header-link{
+  height: 55px;
+  &:hover{
+    h1#logo{
+      .animate;
+      .fadeOut;
+    }
+    p#back{
+      display: block;
+      .fadeInUp;
+    }
+  }
+  h1#logo{
+    .ir;
+    background: transparent url('http://assets.manikrathee.com/blog/_global/images/logo.png') no-repeat 50% 50%;
+    height: 53px;
+    width: 52px;
+    margin: 0 auto;
+    padding: 0;
+    /*float: left;*/
+    -webkit-transition: opacity 0.25s linear;
+    -moz-transition: opacity 0.25s linear;
+    transition: opacity 0.25s linear;
+  }
+  p#back{
+    display: none;
+    width: 100%;
+    margin-top: -36px;
+    padding: 6px 0;
+    text-align: center;
+    font-family: "proxima-nova", sans-serif;
+    text-indent: 0;
+    text-align: center;
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #F9F9F9;
+    margin-top: -40px;
+    padding: 8px 0;
+    .animate;
+    .fadeOut;
+    -webkit-transition: opacity 0.25s linear;
+    -moz-transition: opacity 0.25s linear;
+    transition: opacity 0.25s linear;
+  }
 }
 
+h1#title{
+  // font-family: "proxima-nova", sans-serif;
+  font-weight: 600;
+  line-height: 1;
+  font-size: 21px;
+  margin-top: 4px;
+  color: #fff;
+}
 
-.oldie{
-	@import "import/ie";
-	@import "styles/small-screen";
-	@import "styles/medium-screen";
-	@import "styles/oldie";
+article{
+  width:100%;
+}
+
+#feature{
+  width: 100%;
+  max-width:100%;
+  margin-top: 62px;
+  img{
+    width: 100%;
+    max-width:100%;
+  }
+}
+
+#post-title-container{
+  position: relative;
+  z-index: 50;
+  width:96%;
+  max-width: 740px;
+  margin: 15px auto 50px auto;
+  color: #777;
+  line-height: 1;
+  /*background: transparent url('http://assets.manikrathee.com/blog/_global/images/header-bg-dark.png') repeat 0 0;*/
+  padding: 4px;
+
+}
+#post-title-logo{
+  float:left;
+  margin:0 20px;
+}
+#post-title{
+  // font-family: "kulturista-web",serif;
+  font-family: "garamond-premier-pro",serif;
+    
+       -moz-font-feature-settings: "liga=1, dlig=1";
+      -ms-font-feature-settings: "liga", "dlig";
+      -webkit-font-feature-settings: "liga", "dlig";
+      -o-font-feature-settings: "liga", "dlig";
+      font-feature-settings: "liga", "dlig";
+  font-style: italic;
+  font-weight: 900;
+  // letter-spacing: 2px;
+  /*color: #fff;*/
+  margin: 0;
+  font-size: 24px;
+  text-align: center;
+}
+#subtitle{
+  // font-family: "proxima-nova",serif;
+  font-size: 18px;
+  font-weight: 300;
+  display: block;
+  text-align: center;
+  margin: 0;
+  // text-transform: uppercase;
+}
+#date{
+  // font-family: "proxima-nova",serif;
+  font-size: 14px;
+  font-weight: 300;
+  display: block;
+  text-align: center;
+  margin: 0;
+  // text-transform: uppercase;
+  font-style: italic;
+}
+
+.body, #body{
+  position: relative;
+  z-index: 20;
+  background: #fff;
+  width: 650px;
+  max-width:92%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 4%;
+  line-height: 1.6;
+  // border-radius: 3px;
+  -webkit-transition: color 0.2s ease-in-out;
+  -moz-transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out;
+  &.intro{
+    width: 100%;
+    max-width: 100%;
+    font-size: 30px;
+    margin: 0 auto;
+    padding: 0;
+    line-height: 1.6;
+    font-weight: bold;
+    font-style: italic;
+    p{
+      display: block;
+      width: 1200px;
+      max-width: 92%;
+      margin: 0 auto;
+      padding: 15px 0;
+      font-size: 30px;
+      &:before{
+        display: block;
+        content: '';
+        height: 1px;
+        background: rgba(0,0,0,0.2);
+        margin: 10px 0;
+      }
+      &:after{
+        display: block;
+        content: '';
+        height: 1px;
+        background: rgba(0,0,0,0.2);
+        margin: 10px 0;
+      }
+      
+    }
+    a{
+      font-size: 15px;
+      display: block;
+      text-align: center;
+    }
+  }
+  &.bare{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    width: 100%;
+    padding: 40px;
+    
+  }
+  &:hover{
+    a{
+      color: #000;
+      &:hover{
+        color: #999;
+      }
+    }
+  }
+  ul#loader{
+    padding: 0;
+    margin: 0;
+    list-style-type:none;
+    li{
+      width:100%;
+      list-style-type:none;
+      img{
+        width:100%;
+      }
+    }
+  }
+}
+h4{
+  font-size: 24px;
+  margin: 0 0 10px 0;
+  font-style: italic;
+}
+p{
+  font-size: 20px;
+  font-weight: 300;
+  &.intro{
+    font-size: 30px;
+    margin: 30px 0 40px 0;
+    line-height: 1.6;
+    font-weight: bold;
+    font-style: italic;
+    opacity: 0.9;
+    a{
+      font-size: 15px;
+      display: block;
+      text-align: center;
+    }
+  }
+}
+blockquote{
+  font-family: "proxima-nova", sans-serif;
+  font-size: 16px;
+}
+ul#social{
+  display: none;
+}
+
+footer{
+  background: #fff;
+  border-top: 1px solid #e0e0e0;
+  padding: 10px 0;
+  text-align:center;
+  font-family: "proxima-nova", sans-serif;
+  p, a, h2 a{
+    font-family: "proxima-nova",sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+  }
+  h2#footer-links{
+    margin: 0 0 10px 0;
+    a{
+      text-decoration:none;
+      font-size: 14px;
+      font-weight: normal;
+      margin-right:20px;
+      &:last-child{
+        margin-right: 0;
+      }
+    }
+  }
 }
