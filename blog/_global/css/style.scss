@@ -118,7 +118,7 @@ header#page-header{
   &:hover{
     h1#logo{
       @include animate;
-      @include fadeOutDown;
+      @include fadeOut;
     }
     p#back{
       display: block;
@@ -151,7 +151,6 @@ header#page-header{
     padding: 8px 0;
     @include animate;
     @include fadeOut;
-    @include transition(opacity 0.25s ease-in-out);
   }
 }
 
