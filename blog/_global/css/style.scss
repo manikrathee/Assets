@@ -5,11 +5,7 @@
 @import "import/mixins";
 @import "import/media-queries";
 @import "import/ss-social";
-@import "import/ss-standard";
 @import "import/animation";
-@import "bourbon";
-@import "compass";
-
 
 /* Highlight */
 ::-moz-selection{ background: #333; color:#fff; text-shadow: none; }
@@ -47,7 +43,7 @@ body.blog-root{
     border-bottom: 1px solid #999;
   }
   #logo{
-    .ir;
+    @include ir;
     background: transparent url('http://assets.manikrathee.com/blog/_global/images/logo.png') no-repeat 50% 50%;
     height: 53px;
     width: 52px;
@@ -70,7 +66,7 @@ body.blog-root{
     font-size: 35px;
     text-align: center;
     @include transition( (color 0.25s ease-in-out),(background 0.25s ease-in-out) );
-    @include animated;
+    @include animate;
     @include fadeInDown;
     -moz-font-feature-settings:"liga=1, dlig=1"; 
     -moz-font-feature-settings:"liga", "dlig"; /* EDIT: new syntax for FF 15+ */ 
@@ -121,7 +117,7 @@ header#page-header{
   height: 55px;
   &:hover{
     h1#logo{
-      @include animated;
+      @include animate;
       @include fadeOutDown;
     }
     p#back{
@@ -153,7 +149,7 @@ header#page-header{
     color: #F9F9F9;
     margin-top: -40px;
     padding: 8px 0;
-    @include animated;
+    @include animate;
     @include fadeOut;
     @include transition(opacity 0.25s ease-in-out);
   }
@@ -370,9 +366,14 @@ footer{
 }
 
 
+#disqus_thread{
+  #footer{
+    display: none !important;
+  }
+}
 
 
-.oldie{
+@media (min-width: 768px) {
   body.blog-root{
     #logo{
       margin: 10px auto;
@@ -386,13 +387,13 @@ footer{
       transition:color 0.3s ease-in-out;
       &:hover{
         .info{
-          .animate;
-          .fadeInUp;
+          @include animate;
+          @include fadeInUp;
         }
       }
       .info{
-        .animate;
-        .fadeOut;
+        @include animate;
+        @include fadeOut;
       }
     }
   }
@@ -462,16 +463,6 @@ footer{
     }
   }
 }
-#disqus_thread{
-  #footer{
-    display: none !important;
-  }
-}
-
-@media (min-width: 768px) {
-  .oldie;
-
-}
 
 @media (min-width:1330px){
   blockquote{
@@ -485,7 +476,6 @@ footer{
     font-size: 14px;
     font-style: italic;
     line-height: 1.4;
-    font-family: "rooney-web",sans-serif;
   }
 }
 
@@ -494,14 +484,5 @@ footer{
   h1#logo{
     background:transparent url('http://assets.manikrathee.com/blog/_global/images/logo@2x.png') no-repeat 50% 50%;
     -webkit-background-size:52px 52px;
-  }
-}
-
-.ie7{
-  .container{
-    width:960px;
-    padding:0 2%;
-    margin-left: auto;
-    margin-right: auto;
   }
 }
