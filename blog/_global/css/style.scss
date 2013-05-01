@@ -211,6 +211,14 @@ article{
   text-align: center;
   margin: 0;
 }
+#reading-time{
+  width: 100%;
+  text-align: center;
+  margin: 14px 0 0 0;
+  font-style: italic;
+  font-size: 15px;
+  opacity: 0.75;
+}
 #date{
   font-size: 14px;
   font-weight: 300;
@@ -275,7 +283,9 @@ article{
   }
   &.bare{
     width: 100%;
+    max-width: 100%;
     padding: 40px;
+    @include box;
     &:first-child{
       margin: 40px 0 0 0;
     }
@@ -330,7 +340,20 @@ blockquote{
 ul#social{
   display: none;
 }
-
+#next-previous-post{
+  .pre-heading{
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 0.5em;
+    margin: 0;
+    line-height: 1;
+  }
+  h3{
+    @extend #post-title;
+    font-size: 2em;
+    text-align: left;
+  }
+}
 footer{
   background: #fff;
   border-top: 1px solid #e0e0e0;
@@ -410,7 +433,7 @@ footer{
   #post-title-container{
     padding: 0;
     background: none;
-    margin: -308px auto 240px auto;
+    margin: -308px auto 182px auto;
     color: #fff;
     /*text-shadow: 1px 1px 0 #333;*/
   }
@@ -418,9 +441,10 @@ footer{
     font-size: 36px;
   }
   #subtitle{
-    font-size: 14px;
-    margin: 8px 0 6px 0;
-    // letter-spacing: 1.2px;
+    font-size: 20px;
+    margin: 0px 0 6px 0;
+    text-transform: capitalize;
+    font-weight: 100;
   }
   .body, #body{
     max-width:92%;
