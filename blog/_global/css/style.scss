@@ -115,16 +115,6 @@ header#page-header{
 }
 #header-link{
   height: 55px;
-  &:hover{
-    h1#logo{
-      @include animate;
-      @include fadeOut;
-    }
-    p#back{
-      display: block;
-      @include fadeInUp;
-    }
-  }
   h1#logo{
     @include ir;
     background: transparent url('http://assets.manikrathee.com/blog/_global/images/logo.png') no-repeat 50% 50%;
@@ -137,7 +127,6 @@ header#page-header{
     transition: opacity 0.25s linear;
   }
   p#back{
-    display: none;
     width: 100%;
     margin-top: -36px;
     padding: 6px 0;
@@ -224,7 +213,6 @@ article{
   display: block;
   text-align: center;
   margin: 0;
-  // text-transform: uppercase;
   font-style: italic;
 }
 
@@ -238,7 +226,6 @@ article{
   margin-right: auto;
   padding: 10px 4%;
   line-height: 1.6;
-  // border-radius: 3px;
   -webkit-transition: color 0.2s ease-in-out;
   -moz-transition: color 0.2s ease-in-out;
   transition: color 0.2s ease-in-out;
@@ -340,6 +327,12 @@ ul#social{
   display: none;
 }
 #next-previous-post{
+  background: rgba(248, 248, 248, 1);
+  border-top: 1px solid darken(rgba(248, 248, 248, 1), 5%);
+  border-bottom: 1px solid darken(rgba(248, 248, 248, 1), 5%);
+  .body{
+    background: none;
+  }
   .pre-heading{
     font-weight: 300;
     text-transform: uppercase;
@@ -351,6 +344,14 @@ ul#social{
     @extend #post-title;
     font-size: 2em;
     text-align: left;
+  }
+  p{
+    font-size: 0.8em;
+    margin: -4px 0 0 0;
+    &.date{
+      font-style: italic;
+      opacity: 0.75;
+    }
   }
 }
 footer{
@@ -419,6 +420,25 @@ footer{
       }
     }
   }
+  #header-link{
+    &:hover{
+      h1#logo{
+        @include fadeOut;
+      }
+      p#back{
+        @include fadeInUp;
+      }
+    }
+    h1#logo{
+      @include animate;
+      @include fadeIn;
+    }
+    p#back{
+      opacity: 0;
+      @include animate;
+      @include fadeOutDown;
+    }
+  }
 
   header#page-header{
     position: fixed;
@@ -483,6 +503,11 @@ footer{
     border: none;
     .ss-icon{
       font-size: 2em;
+    }
+  }
+  #next-previous-post{
+    .body{
+      padding: 80px;
     }
   }
 }
