@@ -110,8 +110,8 @@ header#page-header{
   z-index: 50;
   width: 100%;
   padding: 4px 0;
-  background: #333;
-  border-bottom: 1px solid #fff;
+  background: #222;
+  border-bottom: 1px solid #000;
 }
 #header-link{
   height: 55px;
@@ -323,9 +323,6 @@ blockquote{
   font-family: "proxima-nova", sans-serif;
   font-size: 16px;
 }
-ul#social{
-  display: none;
-}
 #next-previous-post{
   background: rgba(248, 248, 248, 1);
   border-top: 1px solid darken(rgba(248, 248, 248, 1), 5%);
@@ -352,6 +349,54 @@ ul#social{
       font-style: italic;
       opacity: 0.75;
     }
+  }
+}
+#profile{
+  text-align: center;
+  border-bottom: 1px solid darken(rgba(248, 248, 248, 1), 5%);
+  .body{
+    overflow: hidden;
+    a{
+      font-style: italic;
+    }
+  }
+  img{
+    display: block;
+    width: 40%;
+    margin: 0 auto 10px;
+  }
+  .copy{
+    width: 100%;
+  }
+  h4{
+    margin: 18px 0 0 0;
+  }
+  p{
+    font-size: 14px;
+    margin: 0;
+  }
+}
+ul#social{
+  display: block;
+  width: 145px;
+  margin: 5px auto 0;
+  padding: 0;
+  overflow: auto;
+  zoom: 1;
+  list-style-type:none;
+  li{
+    list-style-type: none;
+    float: left;
+    display: block;
+  }
+  #facebook{
+
+  }
+  #tweet{
+    margin: 4px 0 0 25px;
+  }
+  #follow{
+    margin: 5px 0 0 0;
   }
 }
 footer{
@@ -430,12 +475,12 @@ footer{
       }
     }
     h1#logo{
-      @include animate;
+      @include animate-fast;
       @include fadeIn;
     }
     p#back{
       opacity: 0;
-      @include animate;
+      @include animate-fast;
       @include fadeOutDown;
     }
   }
@@ -469,36 +514,6 @@ footer{
     max-width:92%;
     padding: 10px 50px;
   }
-  ul#social{
-    display: block;
-    width: 380px;
-    margin: 30px auto 15px;
-    padding: 0;
-    overflow: auto;
-    zoom: 1;
-    list-style-type:none;
-    opacity: 0.2;
-    -webkit-transition:opacity 0.25s ease-in-out;
-    -moz-transition:opacity 0.25s ease-in-out;
-    transition:opacity 0.25s ease-in-out;
-    &:hover{
-      opacity: 1;
-    }
-    li{
-      list-style-type: none;
-      float: left;
-      display: block;
-    }
-    #facebook{
-
-    }
-    #tweet{
-      margin: 4px 0 0 25px;
-    }
-    #follow{
-      margin: 5px 0 0 0;
-    }
-  }
   footer{
     border: none;
     .ss-icon{
@@ -508,6 +523,24 @@ footer{
   #next-previous-post{
     .body{
       padding: 80px;
+    }
+  }
+  #profile{
+    text-align: left;
+    .body{
+      padding: 80px;
+    }
+    ul#social{
+      margin: 4px 0 0 0; 
+    }
+    img{
+      width: 30%;
+      float: left;
+      margin: 0 5% 0 0;
+    }
+    .copy{
+      float: left;
+      width: 65%;
     }
   }
 }
