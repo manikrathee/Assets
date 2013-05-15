@@ -170,10 +170,10 @@ article{
   z-index: 50;
   width:96%;
   max-width: 740px;
-  margin: 15px auto 50px auto;
-  color: #777;
+  margin: 15px auto 18px;
+  color: rgb(53, 53, 53);
   line-height: 1;
-  padding: 4px;
+  padding: 10px 5px;
 }
 #post-title-logo{
   float:left;
@@ -200,11 +200,19 @@ article{
   margin: 0;
 }
 #reading-time{
+  // width: 100%;
+  // text-align: center;
+  // margin: 14px 0 0 0;
+  // font-style: italic;
+  // font-size: 15px;
+  // opacity: 0.75;
+  
+  
   width: 100%;
   text-align: center;
-  margin: 14px 0 0 0;
+  margin: 6px 0 0 0;
   font-style: italic;
-  font-size: 15px;
+  font-size: 13px;
   opacity: 0.75;
 }
 #date{
@@ -320,7 +328,7 @@ p{
   }
 }
 blockquote{
-  font-family: "proxima-nova", sans-serif;
+  font-family: $headline;
   font-size: 16px;
 }
 #next-previous-post{
@@ -404,23 +412,13 @@ footer{
   border-top: 1px solid #e0e0e0;
   padding: 10px 0;
   text-align:center;
-  font-family: "proxima-nova", sans-serif;
-  p, a, h2 a{
-    font-family: "proxima-nova",sans-serif;
+  font-family: $body-copy;
+  p, a{
     font-size: 14px;
     font-weight: normal;
   }
-  h2#footer-links{
-    margin: 0 0 10px 0;
-    a{
-      text-decoration:none;
-      font-size: 14px;
-      font-weight: normal;
-      margin-right:20px;
-      &:last-child{
-        margin-right: 0;
-      }
-    }
+  a{
+    font-style: italic;
   }
 }
 
