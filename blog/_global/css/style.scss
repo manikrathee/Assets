@@ -200,14 +200,6 @@ article{
   margin: 0;
 }
 #reading-time{
-  // width: 100%;
-  // text-align: center;
-  // margin: 14px 0 0 0;
-  // font-style: italic;
-  // font-size: 15px;
-  // opacity: 0.75;
-  
-  
   width: 100%;
   text-align: center;
   margin: 6px 0 0 0;
@@ -287,9 +279,6 @@ article{
   &:hover{
     a{
       color: #000;
-      &:hover{
-        color: #999;
-      }
     }
   }
   ul#loader{
@@ -347,7 +336,7 @@ blockquote{
   }
   h3{
     @extend #post-title;
-    font-size: 2em;
+    font-size: 1.5em;
     text-align: left;
   }
   p{
@@ -377,6 +366,7 @@ blockquote{
     width: 100%;
   }
   h4{
+    font-size: 1em;
     margin: 18px 0 0 0;
   }
   p{
@@ -414,11 +404,14 @@ footer{
   text-align:center;
   font-family: $body-copy;
   p, a{
-    font-size: 14px;
+    font-size: 12px;
     font-weight: normal;
   }
   a{
     font-style: italic;
+  }
+  .ss-icon{
+    font-size: 2.5em;
   }
 }
 
@@ -514,6 +507,9 @@ footer{
   }
   footer{
     border: none;
+    p{
+      font-size: 14px;
+    }
     .ss-icon{
       font-size: 2em;
     }
@@ -521,6 +517,9 @@ footer{
   #next-previous-post{
     .body{
       padding: 80px;
+    }
+    h3{
+      font-size: 2.5em;
     }
   }
   #profile{
@@ -539,6 +538,9 @@ footer{
     .copy{
       float: left;
       width: 65%;
+      h4{
+        font-size: 2em;
+      }
     }
   }
 }
