@@ -198,13 +198,16 @@ article{
   text-align: center;
   margin: 0;
 }
-#reading-time{
+#reading-time, #originally-posted{
   width: 100%;
   text-align: center;
   margin: 6px 0 0 0;
   font-style: italic;
   font-size: 13px;
   opacity: 0.75;
+  a{
+    color: #fff;
+  }
 }
 #date{
   font-size: 14px;
