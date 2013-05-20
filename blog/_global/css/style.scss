@@ -207,6 +207,10 @@ article{
   opacity: 0.75;
   a{
     color: #fff;
+    text-decoration: underline;
+    &:hover{
+      color: darken(#fff, 10%);
+    }
   }
 }
 #date{
