@@ -5,7 +5,7 @@
  *
  */
 
-//@codekit-prepend "libs/jquery-2.0.js", "libs/picturefill.js", "libs/lazyload.js", "libs/highlight.js", "libs/fittext.js", "libs/lettering.js";
+//@codekit-prepend "libs/jquery-2.0.js", "libs/picturefill.js", "libs/lazyload.js", "libs/highlight.js", "libs/lettering.js";
 
 var win   = $(window);
 var doc   = $(document);
