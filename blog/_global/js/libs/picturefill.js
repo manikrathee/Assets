@@ -1,6 +1,6 @@
 /*! Picturefill - Responsive Images that work today. (and mimic the proposed Picture element with divs). Author: Scott Jehl, Filament Group, 2012 | License: MIT/GPLv2 */
 
-jQuery(function( w ){
+(function( w ){
 
 	// Enable strict mode
 	"use strict";

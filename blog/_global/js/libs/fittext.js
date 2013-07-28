@@ -9,7 +9,7 @@
 * Date: Thu May 05 14:23:00 2011 -0600
 */
 
-jQuery(function( $ ){
+(function( $ ){
 
   $.fn.fitText = function( kompressor, options ) {
 

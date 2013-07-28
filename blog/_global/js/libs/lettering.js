@@ -9,7 +9,7 @@
 *
 * Date: Mon Sep 20 17:14:00 2010 -0600
 */
-jQuery(function($){
+(function($){
   function injector(t, splitter, klass, after) {
     var a = t.text().split(splitter), inject = '';
     if (a.length) {

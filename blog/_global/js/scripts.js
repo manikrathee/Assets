@@ -5,7 +5,7 @@
  *
  */
 
-//@codekit-prepend "libs/jquery-2.0.js", "libs/picturefill.js", "libs/lazyload.js", "libs/highlight.js", "libs/lettering.js";
+//@codekit-prepend "libs/jquery-2.0.js", "libs/lazyload.js", "libs/highlight.js", "libs/lettering.js", "libs/picturefill.js";
 
 var win   = $(window);
 var doc   = $(document);
@@ -26,7 +26,6 @@ _gaq.push(['_trackPageview']);
 
 /* Reading Time */
 $(document).ready(function() {
-  console.log('ready');
   $(".time").text(function (index, value) {
     console.log('time');
     return Math.round(parseFloat(value));
