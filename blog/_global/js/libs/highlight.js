@@ -3,8 +3,7 @@ Syntax highlighting with language autodetection.
 http://softwaremaniacs.org/soft/highlight/
 */
 
-function() {
-
+(function($, window, document, undefined) {
   /* Utility functions */
 
   function escape(value) {
@@ -610,4 +609,4 @@ function() {
         result[key] = obj[key];
     return result;
   }
-}
+})
