@@ -11,6 +11,8 @@
 .question{
   overflow: hidden;
   clear: both;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.25);
 }
 .left{
   float: left;
@@ -22,6 +24,9 @@
 
 
 @media (min-width: 767px) {
+  .left, .right{
+    padding: 20px;
+  }
   .left{
     width: 50%;
     border-right: 1px solid rgba(0,0,0,0.25);
