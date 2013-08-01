@@ -34,18 +34,18 @@
 }
 .left {
   float: left;
-  line-height: 1.2;
+  line-height: 1.4;
 }
 .right {
   float: right;
-  line-height: 1.2;
+  line-height: 1.4;
   margin-top: 35px;
 }
 
 
 @media (min-width: 767px) {
   #post-title-container {
-    margin: -300px auto 193px auto;
+    margin: -300px auto 174px auto;
     #post-title {
       font-size: 80px;
     }
