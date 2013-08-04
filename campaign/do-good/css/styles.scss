@@ -1,3 +1,13 @@
+@import
+  "core/core",
+  "core/mixins",
+  "core/animation";
+
+// Kill tumblr controls
+iframe {display:none !important;}
+iframe#tumblr_controls {display:none !important;}
+
+
 body {
       background: #3872c7;
       font-family: "soleil",helvetica, arial, sans-serif;
@@ -30,6 +40,8 @@ body {
       margin-left: auto;
       margin-right: auto;
       text-decoration: none;
+      @include animate;
+      @include fadeInDown;
     }
     header h1 {
       display: block;
@@ -43,6 +55,13 @@ body {
     section{
       padding: 100px 20px;
       text-align: center;
+      @include animate;
+      @include delay-short;
+      @include fadeInDown;
+      ul {
+        margin: 0;
+        padding: 0;
+      }
     }
     section:first-child {
       background:red;
@@ -87,8 +106,30 @@ body {
       color: #3872c7;
       border-color: #2458a3;
     }
+    .share, .submit {
+      display: none;
+      @include animate;
+      @include fadeOut;
+      &.show {
+        @include fadeIn;
+      }
+    }
+    .share {
+      li {
+        margin-bottom: 20px;
+      }
+      a {
+        display: block;
+        width: 100%;
+        @include box;
+      }
+    }
     footer {
       text-align: center;
+      text-transform: lowercase;
+      @include animate;
+      @include delay;
+      @include fadeInDown;
     }
     footer small{
       display: block;
@@ -98,7 +139,6 @@ body {
       font-size: 14px;
       letter-spacing: 0.8px;
       font-weight: 700;
-      text-transform: lowercase;
       border-top: 1px solid rgba(124,190,255,1);
       border-bottom: 1px solid rgba(124,190,255,1);
     }
@@ -111,13 +151,6 @@ body {
       font-weight: 100;
       color: rgba(255,255,255,0.9);
       text-shadow: 0 1px 0 rgba(0,0,0,0.3);
-    }
-    footer .made-by {
-      color: rgba(255,255,255,0.5);
-    }
-    footer .made-by:hover {
-      text-decoration: none;
-      color: rgba(255,255,255,1);
     }
     footer .campaign {
       display: block;
@@ -148,6 +181,7 @@ body {
       }
       header a {
         margin: 0;
+        @include fadeInLeft;
       }
       header h1 {
         margin: 0;
@@ -155,6 +189,17 @@ body {
       section{
         padding: 125px 125px 50px;
         text-align: left;
+        @include fadeInLeft;
       }
-
+      footer {
+        @include fadeInLeft;
+      }
+      .share {
+        a {
+          display: inline-block;
+          vertical-align: top;
+          zoom: 1;
+          width: auto;
+        }
+      }
     }
