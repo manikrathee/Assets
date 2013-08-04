@@ -11,25 +11,14 @@ var win      = $(window),
     doc      = $(document),
     body     = $('body'),
     $self    = $(this),
-    iDidThis = $('.i-did-this'),
-    iDidThisChildren = $('.i-did-this a');
+    iDidThis = $('.i-did-this');
 
 
 iDidThis.click(function(e){
   e.preventDefault();
-  e.stopPropogration();
   $('.share').toggleClass('show');
 });
 
-doc.click(function(e){
-  if ( $('.share').hasClass('show') ) {
-    $('.share').removeClass('show');
-  }
-});
-
-iDidThisChildren.click(function(e){
-  e.stopPropogration();
-});
 
 // GA
 var _gaq = _gaq || [];
