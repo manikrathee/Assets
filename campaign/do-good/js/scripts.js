@@ -7,13 +7,23 @@
 
 //@codekit-prepend "libs/jquery-2.0.js"";
 
-var win   = $(window);
-var doc   = $(document);
-var body  = $('body');
-var $self = $(this);
+var win      = $(window),
+    doc      = $(document),
+    body     = $('body'),
+    $self    = $(this),
+    iDidThis = $('.i-did-this');
 
 
+iDidThis.click(function(e){
+  e.preventDefault();
+  $('.share').toggleClass('show');
+  if ( $('.submit').hasClass('show') ) {
+    $('.submit').removeClass('show');
+  }
+});
 
+
+// GA
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-40787829-2']);
 _gaq.push(['_trackPageview']);
