@@ -23,7 +23,7 @@ $(document).ready(function() {
     $('.share').toggleClass('show');
   });
 
-  shareOnTwitter.attr('href','https://twitter.com/share?url=' + sharePermalink + '&text=' + shareText + ' via @dogood_io&related=dogood_io:DoGood');
+  shareOnTwitter.attr('href','https://twitter.com/share?url=' + sharePermalink + '&text=I did the @dogood_io for today: ' + shareText + '&related=dogood_io:DoGood');
 
 });
 
