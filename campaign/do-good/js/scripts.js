@@ -11,12 +11,20 @@ var win      = $(window),
     doc      = $(document),
     body     = $('body'),
     $self    = $(this),
-    iDidThis = $('.i-did-this');
+    iDidThis = $('.i-did-this'),
+    shareOnTwitter = $('.share-on-twitter'),
+    shareText = $('h2').text(),
+    sharePermalink = $('.share-on-twitter').data('permalink');
 
+$(document).ready(function() {
 
-iDidThis.click(function(e){
-  e.preventDefault();
-  $('.share').toggleClass('show');
+  iDidThis.click(function(e){
+    e.preventDefault();
+    $('.share').toggleClass('show');
+  });
+
+  shareOnTwitter.attr('href','https://twitter.com/share?url=' + sharePermalink + '&text=' + shareText + ' via @dogood_io&related=dogood_io:DoGood');
+
 });
 
 
