@@ -27,7 +27,6 @@ $(document).ready(function() {
 
 });
 
-
 // GA
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-40787829-2']);
